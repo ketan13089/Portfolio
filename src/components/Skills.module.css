@@ -1,7 +1,7 @@
 .skills {
     min-height: 100vh;
     padding: 60px 20px;
-    background-color: #f4f4f4;
+    background-color: rgba(0, 0, 0, 0.827);
 }
 
 .heading{
@@ -17,9 +17,9 @@
     display: inline-block;
     margin-right: 15px;
     padding: 10px;
-    background-color: #333;
+    background-color: beige;
     /* Default background */
-    color: #fff;
+    color: black;
     border: none;
     border-radius: 4px;
     transition: transform 0.3s ease-in-out;
