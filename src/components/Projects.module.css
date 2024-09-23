@@ -1,0 +1,20 @@
+.projects {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: #fff;
+  }
+  
+  .projectGrid {
+    height: 500px;
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .projectItem {
+    border-radius: 20px;
+    background-color: #f4f4f4;
+    padding: 30px;
+    flex: 1;
+  }
+  

@@ -1,0 +1,59 @@
+.skills {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+.heading{
+    font-size: 3.5rem;
+}
+
+.skills ul {
+    margin-top: 90px;
+    list-style: none;
+}
+
+.skills li {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 10px;
+    background-color: #333;
+    /* Default background */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom left, #f6d365 0%, #fda085 100%);
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+    /* Smooth transition for opacity */
+    z-index: 0;
+}
+
+.skills li:hover::after {
+    opacity: 1;
+}
+
+.skills li span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease-in-out, font-weight 0.3 ease-in-out;
+    /* Smooth transition for text color */
+}
+
+.skills li:hover span {
+    color: rgb(85, 84, 84);
+    font-weight: bold;
+}

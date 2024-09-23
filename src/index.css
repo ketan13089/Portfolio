@@ -1,0 +1,12 @@
+*{
+  font-family: "Montserrat";
+  scroll-behavior: smooth;
+}
+
+h2 {
+  font-size: 2rem;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

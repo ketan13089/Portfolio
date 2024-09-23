@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  
+  .app {
+    min-height: 100vh;
+    color: black; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  section {
+    padding: 60px 20px;
+  }
+  
+  h2 {
+    color: #ff9800; 
+  }
+  
