@@ -1,20 +1,75 @@
 .projects {
     min-height: 100vh;
     padding: 60px 20px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.827);
   }
   
   .projectGrid {
     height: 500px;
     margin-top: 40px;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
   }
+  
   
   .projectItem {
-    border-radius: 20px;
-    background-color: #f4f4f4;
-    padding: 30px;
-    flex: 1;
+    
+    overflow: hidden;
+    height: 500px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
   }
   
+  .projectItem:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .projectImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    transition: opacity 0.3s ease;
+  }
+
+  
+  .projectDetails {
+    padding: 20px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff;
+  }
+  
+  .proHead{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .proHead:hover{
+    color: bisque;
+  }
+  
+  .projectDetails p {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  
+  /* Hover Effects */
+  .projectItem:hover .projectImage {
+    opacity: 0.8;
+  }
+  
+  .projectItem:hover .projectDetails {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
