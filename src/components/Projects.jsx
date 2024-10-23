@@ -27,7 +27,7 @@ const Projects = () => {
     <div className={styles.projectItem}>
     <img src={netflix} alt="Project demo" className={styles.projectImage} />
       <div className={styles.projectDetails}>
-      <a href='https://github.com/ketan13089/CricCatalyst' target='_blank' className={styles.proHead}>CriCatalyst</a>
+      <a href='https://github.com/ketan13089/CricCatalyst' target='_blank' className={styles.proHead}>CricCatalyst</a>
       <p>A description of this wonderful project.</p>
       </div>
     </div>

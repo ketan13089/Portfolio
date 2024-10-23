@@ -2,8 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
   }
+
+  
+
   
   .app {
     min-height: 100vh;
@@ -11,6 +13,13 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    height: 300px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  .app::-webkit-scrollbar{
+    display: none;
   }
   
   section {
@@ -20,4 +29,16 @@
   h2 {
     color: #ff9800; 
   }
+
+  /* App.css */
+
+.separator {
+  border: none;             
+  height: 1px;             
+  background: linear-gradient(to right,red,orange); 
+  margin: 0;          
+}
+
+
+  
   

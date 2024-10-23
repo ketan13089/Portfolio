@@ -1,16 +1,36 @@
+/*About.module.css */
+
 .about {
-    padding: 60px 20px;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.827);
-  }
-  
-  .about h2 {
-    font-size: 3.5rem;
-  }
-  
-  .about p {
-    color:wheat;
-    font-size: 1.1rem;
-    margin-top: 100px;
-  }
-  
+  padding: 60px 20px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.827);
+}
+
+
+.abtContent {
+  display: flex;
+  justify-content: space-between; /* Align items to the edges */
+  align-items: center; /* Center vertically */
+  gap: 50px; /* Optional, adjust if needed */
+  color: wheat;
+  width: 100%; /* Use full width of the parent */
+  font-size: 1.1rem;
+  text-align: left;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+
+.abtContent p {
+  flex: 1; /* Allow paragraph to take up half the space */
+}
+
+.sph {
+  flex: 1; /* Allow the sphere to take up the remaining half */
+  display: flex; /* To center the sphere if needed */
+  justify-content: flex-end; /* Align sphere to the right */
+}
+
+
+
+
+

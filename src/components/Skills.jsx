@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './Skills.module.css';
 
+
 const Skills = () => {
     return (
+        
         <section id="skills" className={styles.skills}>
             <h2 className={styles.heading}>Skills</h2>
             <ul>
@@ -12,7 +14,8 @@ const Skills = () => {
                 <li><span>Tailwind CSS</span></li>
                 <li><span>Git/GitHub</span></li>
             </ul>
-        </section>
+            
+        </section>          
     );
 };
 
