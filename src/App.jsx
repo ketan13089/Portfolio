@@ -1,32 +1,31 @@
 import React from 'react';
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Space from './components/Space';
-import './App.css';
-import './index.css';
-import GeminiAnswerChecker from './components/GeminiAnswerChecker';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import BrowserRouter and Route
+import Navbar from './components/Navigation/Navbar';
+import { motion, AnimatePresence } from 'framer-motion';
+import useScrollProgress from './hooks/useScrollProgress';
+import Hero from './components/Hero/Hero';
+import ProjectCard from './components/Projects/ProjectCard';
 
-function App() {
+export default function App() {
+  const scrollProgress = useScrollProgress();
+
   return (
-    <div className="app">
-      <Space/>
-      <div className="scrollable">
-      <Header />
-      <div className="separator" ></div>
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
-      <GeminiAnswerChecker/>
-      <div className="separator" ></div>
-      <Footer />
+    <Router>
+      <div className='min-h-screen bg-gray-50'>
+        <motion.div
+          className='fixed top-0 left-0 right-0 h-1 bg-blue-600 z-50'
+          style={{ scaleX: scrollProgress / 100 }}
+          initial={{ scaleX: 0 }}
+        />
+        <Navbar />
+
+        <AnimatePresence>
+          <Routes>
+            <Route path="/about" element={<Hero />} />
+            <Route path="/projects" element={<ProjectCard />} />
+          </Routes>
+        </AnimatePresence>
       </div>
-    </div>
+    </Router>
   );
 }
-
-export default App;

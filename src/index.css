@@ -1,26 +1,53 @@
-*{
-  font-family: "Montserrat";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden; /* Prevents scrollbars from appearing on the viewport */
+}
 
+body {
+  overflow-y: scroll; /* Enables scrolling without showing the scrollbar */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
 
 h2 {
   margin: 0;
-  color:white;
+  color: white;
   grid-column: 1;
   grid-row: 1;
   z-index: 1;
   font-size: 3.5rem;
-  animation: glow 3s ease-in-out infinite alternate, clr 3s ease-in-out infinite;
   text-align: center;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px beige;
-  }
-  to {
-    text-shadow: 0 0 10px orange, 0 0 10px orange;
-  }
+.animate-project {
+  color: black;
+  display: inline-block; /* Allows transform to work smoothly */
+  transition: transform 0.1s ease-in-out;
+}
+
+.animate-project:hover {
+  color: rgb(207, 82, 82);
+  transform: translateY(-5px); /* Moves the element slightly upwards */
+}
+
+.tilt{
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+}
+
+.tilt:hover{
+  transform: scale(1.1);
 }
