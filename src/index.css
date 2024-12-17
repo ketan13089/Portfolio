@@ -86,3 +86,96 @@ h2 {
     border-color: transparent;
   }
 }
+
+
+.skill-card {
+  --card-perspective: 900px;
+  --card-rotate-x: 25deg;
+  --card-translate-y: -5%;
+  --card-shadow-color: rgba(0, 0, 0, 0.75);
+  --gradient-start: transparent;
+  --gradient-middle: rgba(12, 13, 19, 0.5);
+  --gradient-end: rgba(12, 13, 19);
+  --hover-transition: all 0.5s ease-in-out;
+}
+
+.skill-card-wrapper {
+  transition: var(--hover-transition);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 0.5rem;
+  opacity: 0;
+}
+
+.skill-card:hover .skill-card-wrapper {
+  opacity: 1;
+  transform: 
+      perspective(var(--card-perspective)) 
+      translateY(var(--card-translate-y)) 
+      rotateX(var(--card-rotate-x));
+  box-shadow: 
+      2px 35px 32px -8px var(--card-shadow-color);
+}
+
+.skill-card-wrapper::before,
+.skill-card-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: var(--hover-transition);
+  opacity: 0;
+}
+
+.skill-card-wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+      to top,
+      var(--gradient-start) 46%,
+      var(--gradient-middle) 68%,
+      var(--gradient-end) 97%
+  );
+}
+
+.skill-card-wrapper::after {
+  bottom: 0;
+  height: 80px;
+  background-image: linear-gradient(
+      to bottom,
+      var(--gradient-start) 46%,
+      var(--gradient-middle) 68%,
+      var(--gradient-end) 97%
+  );
+}
+
+.skill-card:hover .skill-card-wrapper::before,
+.skill-card:hover .skill-card-wrapper::after {
+  opacity: 1;
+}
+
+.skill-card:hover .skill-card-wrapper::after {
+  height: 120px;
+}
+
+.skill-card-title {
+  transition: transform 0.5s;
+}
+
+.skill-card:hover .skill-card-title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.skill-card-character {
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.skill-card:hover .skill-card-character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}

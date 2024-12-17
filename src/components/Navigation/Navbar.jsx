@@ -22,7 +22,7 @@ export default function Navbar() {
     const navItems = [
         { name: 'About', path: '/about' },
         { name: 'Projects', path: '/projects' }, // Updated to use path
-        { name: 'Skills', href: '#skills' },
+        { name: 'Skills', href: '/skills' },
         { name: 'Contact', href: '#contact' }
     ];
 
@@ -33,18 +33,7 @@ export default function Navbar() {
     
         
 
-        // Toggle dark mode
-        const toggleTheme = () => {
-            setIsDarkMode((prevMode) => !prevMode);
-            document.body.classList.toggle("dark-mode", !isDarkMode);
-        };
-
-        useEffect(() => {
-            // Check user’s default preference
-            const userPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-            setIsDarkMode(userPrefersDark);
-            document.body.classList.toggle("dark-mode", userPrefersDark);
-        }, []);
+       
 
         return (
             <motion.nav
