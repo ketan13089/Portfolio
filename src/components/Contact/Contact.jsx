@@ -17,12 +17,12 @@ export default function Contact() {
                 alert('Failed to send message. Please try again later.');
             });
 
-        e.target.reset(); 
+        e.target.reset();
     };
 
     return (
         <section id="contact" className='h-screen pt-32 pb-20 px-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black relative'>
-            
+
             <div className='absolute inset-0 bg-cover bg-center z-0' />
 
             <div className='max-w-7xl mx-auto text-center relative z-10'>
@@ -32,7 +32,19 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    Get In Touch
+                    <span className="animate-project">G</span>
+                    <span className="animate-project">e</span>
+                    <span className="animate-project mr-3">t</span>
+   
+                    <span className="animate-project">I</span>
+                    <span className="animate-project mr-3">n</span>
+
+                    <span className="animate-project">T</span>
+                    <span className="animate-project">o</span>
+                    <span className="animate-project">u</span>
+                    <span className="animate-project">c</span>
+                    <span className="animate-project">h</span>
+
                 </motion.h1>
 
                 <motion.p
@@ -41,7 +53,7 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2, delay: 0.2 }}
                 >
-                    Feel free to reach out for collaborations or just a friendly chat.
+                    Feel free to reach out for collaborations.
                 </motion.p>
 
                 <motion.form
@@ -82,11 +94,11 @@ export default function Contact() {
                     <div>
                         <motion.button
                             type="submit"
-                            className="w-full py-3 px-6 bg-indigo-500 text-white font-semibold rounded-lg transform transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-600"
+                            className=" py-3 px-6 bg-white text-indigo-500 font-semibold rounded-lg transform transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-600 hover:text-white"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Send Message
+                            Send
                         </motion.button>
                     </div>
                 </motion.form>
