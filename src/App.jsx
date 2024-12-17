@@ -47,7 +47,7 @@ export default function App() {
 
         <AnimatePresence>
           <Routes>
-            <Route path="/kg" element={
+            <Route path="/" element={
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
