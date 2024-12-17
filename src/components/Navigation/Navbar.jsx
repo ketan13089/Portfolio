@@ -23,7 +23,7 @@ export default function Navbar() {
         { name: 'About', path: '/about' },
         { name: 'Projects', path: '/projects' }, // Updated to use path
         { name: 'Skills', href: '/skills' },
-        { name: 'Contact', href: '#contact' }
+        { name: 'Contact', href: '/contact' }
     ];
 
     const navVariants = {

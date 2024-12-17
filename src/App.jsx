@@ -7,6 +7,7 @@ import Hero from './components/Hero/Hero';
 import ProjectCard from './components/Projects/ProjectCard';
 import KG from './components/KG/KG';
 import Skills from './components/Skills/Skills';
+import Contact from './components/Contact/Contact';
 
 export default function App() {
   const scrollProgress = useScrollProgress();
@@ -85,6 +86,15 @@ export default function App() {
               >
                 <Skills />
               </motion.div>
+            } />
+            <Route path="/contact" element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.5 }}
+                ><Contact/>
+                </motion.div>
             } />
           </Routes>
         </AnimatePresence>

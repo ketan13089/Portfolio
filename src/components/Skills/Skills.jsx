@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import react from '/react.png'
+// import react from '/react.png'
 
 const SkillCard = ({ skill, proficiency, characterImage }) => {
     return (
@@ -36,7 +36,7 @@ const SkillCard = ({ skill, proficiency, characterImage }) => {
 
 const Skills = () => {
     const skills = [
-        { skill: 'React', proficiency: 'Advanced', characterImage: react },
+        { skill: 'React', proficiency: 'Advanced' },
         { skill: 'JavaScript', proficiency: 'Advanced' },
         { skill: 'Tailwind CSS', proficiency: 'Intermediate' },
         { skill: 'Python', proficiency: 'Intermediate' },
