@@ -95,7 +95,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 bg-gradient-to-r from-blue-50 to-indigo-50">
+    <section id="projects" className="py-20 px-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black">
       <div className="h-screen max-w-7xl mx-auto ">
         <motion.div
           className="text-center mb-16"

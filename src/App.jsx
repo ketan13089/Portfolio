@@ -5,32 +5,33 @@ import { motion, AnimatePresence } from 'framer-motion';
 import useScrollProgress from './hooks/useScrollProgress';
 import Hero from './components/Hero/Hero';
 import ProjectCard from './components/Projects/ProjectCard';
+import KG from './components/KG/KG';
 
 export default function App() {
   const scrollProgress = useScrollProgress();
 
-  const [isDarkMode,setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     const userPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark").matches;
 
-    if(savedTheme){
+    if (savedTheme) {
       setIsDarkMode(savedTheme === 'dark');
-    }else{
+    } else {
       setIsDarkMode(userPrefersDark);
-  }
-  },[]);
-
-  useEffect(()=>{
-    if(isDarkMode){
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme','dark');
-    }else{
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme','light');
     }
-  },[isDarkMode]);
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
 
   return (
     <Router>
@@ -40,30 +41,40 @@ export default function App() {
           style={{ scaleX: scrollProgress / 100 }}
           initial={{ scaleX: 0 }}
         />
-        <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
+        <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
 
         <AnimatePresence>
           <Routes>
+            <Route path="/kg" element={
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.5 }}
+                ><KG/>
+                </motion.div>
+            } />
+
             <Route path="/about" element={
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 100 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Hero />
-                </motion.div>
-              } />
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Hero />
+              </motion.div>
+            } />
             <Route path="/projects" element={
-                <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 100 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <ProjectCard />
-                </motion.div>
-              } />
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 0.5 }}
+              >
+                <ProjectCard />
+              </motion.div>
+            } />
           </Routes>
         </AnimatePresence>
       </div>

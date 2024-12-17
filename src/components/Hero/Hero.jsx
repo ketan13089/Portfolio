@@ -5,7 +5,7 @@ export default function Hero() {
     return (
         <section className='h-screen pt-32 pb-20 px-4 bg-gradient-to-r from-blue-50 to-indigo-50 relative'>
 
-            <div className='absolute bg-black inset-0 bg-cover bg-center z-0'/>
+            <div className='absolute bg-gradient-to-r from-gray-800 via-gray-900 to-black inset-0 bg-cover bg-center z-0'/>
 
             <div className='max-w-7xl mx-auto text-center relative z-10'>
                 <motion.h1
