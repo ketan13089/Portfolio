@@ -8,25 +8,29 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 const ProjectCard = ({ title, description, technologies, image, link, github }) => {
   return (
     <motion.div
-      className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+      className="bg-gradient-to-r from-blue-100 to-indigo-200 rounded-lg shadow-sm overflow-hidden projectCard"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
+
+
       <div className="relative">
-        <img 
-          src={image || "/api/placeholder/400/200"} 
-          alt={title} 
+        <img
+          src={image || "/api/placeholder/400/200"}
+          alt={title}
           className="w-full h-48 object-cover tilt"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/50 opacity-0 transition-opacity duration-300 hover:opacity-100" />
       </div>
-      
+
+
+
       <div className="p-6">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
         <p className="text-gray-600 mb-4 line-clamp-2">{description}</p>
-        
+
         <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech, index) => (
             <span
@@ -43,15 +47,15 @@ const ProjectCard = ({ title, description, technologies, image, link, github }) 
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-indigo-500 text-white text-center font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-indigo-600"
+            className="flex-1 bg-indigo-500 text-white text-center font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-indigo-600 hover:text-yellow-300 hover:scale-105"
           >
-             <FontAwesomeIcon icon={faLink} size="1x" />
+            <FontAwesomeIcon icon={faLink} size="1x" />
           </a>
           <a
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-gray-800 text-white text-center font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-gray-900"
+            className="flex-1 bg-gray-800 text-white text-center font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-gray-900 hover:text-yellow-300 hover:scale-105"
           >
             <FontAwesomeIcon icon={faGithub} size="1x" />
           </a>
@@ -87,7 +91,7 @@ const Projects = () => {
       link: "#",
       github: "https://github.com/ketan13089/peerstation"
     },
-    
+
   ];
 
   return (
@@ -100,7 +104,7 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 my-5">
             <span className="animate-project">P</span>
             <span className="animate-project">r</span>
             <span className="animate-project">o</span>
@@ -112,11 +116,11 @@ const Projects = () => {
           </h1>
         </motion.div>
 
-        <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        initial={{opacity:0,y:20}}
-        animate={{opacity:1,y:0}}
-        transition={{duration:0.5,delay:0.6}}>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}>
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
