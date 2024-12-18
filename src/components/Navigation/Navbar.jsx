@@ -8,7 +8,6 @@ import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,7 +20,7 @@ export default function Navbar() {
 
     const navItems = [
         { name: 'About', path: '/about' },
-        { name: 'Projects', path: '/projects' }, // Updated to use path
+        { name: 'Projects', path: '/projects' }, 
         { name: 'Skills', path: '/skills' },
         { name: 'Contact', path: '/contact' }
     ];
