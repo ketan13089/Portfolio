@@ -138,9 +138,9 @@ export default function KG() {
 
                     <div className="flex justify-center space-x-6 mt-10">
                         {[
-                            { Icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-                            { Icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-                            { Icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' }
+                            { Icon: Github, href: 'https://github.com/ketan13089', label: 'GitHub' },
+                            { Icon: Linkedin, href: 'https://linkedin.com/in/ketan-ghumare/', label: 'LinkedIn' },
+                            { Icon: Twitter, href: 'https://x.com/ketan_ghumare', label: 'Twitter' }
                         ].map(({ Icon, href, label }) => (
                             <a
                                 key={label}
