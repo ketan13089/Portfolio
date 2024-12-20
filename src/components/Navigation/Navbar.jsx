@@ -41,7 +41,7 @@ export default function Navbar() {
                 animate="visible"
                 variants={navVariants}
             >
-                <div className="w-screen bg-gradient-to-t from-gray-600 to-gray-800 rounded-b-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="navBg w-screen rounded-b-xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16 items-center">
                         <motion.div className="text-2xl font-bold" whileHover={{ scale: 1.05 }}>
                             <a href="/">
@@ -58,9 +58,9 @@ export default function Navbar() {
                         <div className="flex justify:center space-x-8">
                             
                             {navItems.map((item) => (
-                                <motion.div key={item.name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                                <motion.div key={item.name} whileTap={{ scale: 0.95 }}>
                                     {item.path ? (
-                                        <Link to={item.path} className="text-white hover:text-indigo-600 transition-colors">
+                                        <Link to={item.path} className="text-nav text-white hover:text-indigo-200 transition-colors">
                                             {item.name}
                                         </Link>
                                     ) : (

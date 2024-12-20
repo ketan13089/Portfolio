@@ -12,28 +12,7 @@ import Contact from './components/Contact/Contact';
 export default function App() {
   const scrollProgress = useScrollProgress();
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const userPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark").matches;
-
-    if (savedTheme) {
-      setIsDarkMode(savedTheme === 'dark');
-    } else {
-      setIsDarkMode(userPrefersDark);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDarkMode]);
+  
 
   return (
     <Router>
@@ -43,7 +22,7 @@ export default function App() {
           style={{ scaleX: scrollProgress / 100 }}
           initial={{ scaleX: 0 }}
         />
-        <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        <Navbar />
 
         <AnimatePresence>
           <Routes>

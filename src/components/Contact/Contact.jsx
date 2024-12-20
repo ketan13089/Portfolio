@@ -21,7 +21,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className='h-screen pt-32 pb-20 px-4 bg-gradient-to-r from-gray-800 via-gray-900 to-black relative'>
+        <section id="contact" className='h-screen pt-32 pb-20 px-4 bgforall relative'>
 
             <div className='absolute inset-0 bg-cover bg-center z-0' />
 
@@ -68,7 +68,7 @@ export default function Contact() {
                         <input
                             type="text"
                             name="user_name"
-                            className="w-full p-4 text-lg border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            className="contactform w-full p-4 text-lg border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Your Name"
                             required
                         />
@@ -77,7 +77,7 @@ export default function Contact() {
                         <input
                             type="email"
                             name="user_email"
-                            className="w-full p-4 text-lg border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            className="contactform w-full p-4 text-lg border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Your Email"
                             required
                         />
@@ -86,7 +86,7 @@ export default function Contact() {
                         <textarea
                             name="message"
                             rows="4"
-                            className="w-full p-4 text-lg border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            className="contactform w-full p-4 text-lg border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             placeholder="Your Message"
                             required
                         ></textarea>
@@ -94,7 +94,7 @@ export default function Contact() {
                     <div>
                         <motion.button
                             type="submit"
-                            className=" py-3 px-6 bg-white text-indigo-500 font-semibold rounded-lg transform transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-600 hover:text-white"
+                            className="sendButton py-3 px-6 bg-gradient-to-r from-purple-300 to-indigo-500 text-white font-semibold rounded-lg transform transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-600 hover:text-gray-600"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >

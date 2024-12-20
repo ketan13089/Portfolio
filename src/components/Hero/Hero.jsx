@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import Typed from 'typed.js'; 
 
 export default function Hero() {
+    useEffect(() => {
+        const typed = new Typed('#element', {
+            strings: ['<i>Let’s <strong>build</strong> something amazing together!<i>',],
+            typeSpeed: 50,
+            startDelaydelay: 2000,
+            backDelay: 1000,
+            backSpeed: 40,
+            loop: true
+        });
+
+        // Cleanup
+        return () => {
+            typed.destroy();
+        };
+    }, []);
+
     return (
         <section className='h-screen pt-32 pb-20 px-4 bg-gradient-to-r from-blue-50 to-indigo-50 relative'>
-
-            <div className='absolute bg-gradient-to-r from-gray-800 via-gray-900 to-black inset-0 bg-cover bg-center z-0' />
+            <div className='absolute bgforall inset-0 bg-cover bg-center z-0' />
 
             <div className='max-w-7xl mx-auto text-center relative z-10'>
                 <motion.h1
@@ -17,18 +32,15 @@ export default function Hero() {
                     transition={{ duration: 0.2 }}
                 >
                     <h1 className="text-4xl font-bold text-white my-5">
-
                         <span className="animate-project">F</span>
                         <span className="animate-project">u</span>
                         <span className="animate-project">l</span>
                         <span className="animate-project mr-3">l</span>
-
                         <span className="animate-project">S</span>
                         <span className="animate-project">t</span>
                         <span className="animate-project">a</span>
                         <span className="animate-project">c</span>
                         <span className="animate-project mr-3">k</span>
-
                         <span className="animate-project">D</span>
                         <span className="animate-project">e</span>
                         <span className="animate-project">v</span>
@@ -41,7 +53,7 @@ export default function Hero() {
                 </motion.h1>
 
                 <motion.p
-                    className='text-xl text-gray-400 mb-8 max-w-2xl mx-auto'
+                    className='text-xl text-gray-300 mb-8 max-w-2xl mx-auto'
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2, delay: 0.2 }}
@@ -55,10 +67,10 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <Link to="/contact" className="hero-btn bg-indigo-600 text-white font-semibold py-3 px-6 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-indigo-100 hover:text-indigo-600">
+                    <Link to="/contact" className="hero-btn bg-gradient-to-r from-purple-300 to-indigo-500 text-white font-semibold py-3 px-6 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-indigo-100 hover:text-white">
                         Contact
                     </Link>
-                    <Link to="/projects" className="btn-rev bg-indigo-600 text-white font-semibold py-3 px-6 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-indigo-100 hover:text-indigo-600">
+                    <Link to="/projects" className="btn-rev bg-gradient-to-r from-purple-300 to-indigo-500 text-white font-semibold py-3 px-6 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-indigo-100 hover:text-white">
                         Projects
                     </Link>
                 </motion.div>
@@ -72,25 +84,44 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.6 }}
                 >
-                    Java Developer
+                    <h2 className='javaText text-4xl font-bold text-white my-5'>
+                        
+
+                        <span className="javaD">J</span>
+                        <span className="javaD">a</span>
+                        <span className="javaD">v</span>
+                        <span className="javaD mr-3">a</span>
+
+                        <span className="javaD">D</span>
+                        <span className="javaD">e</span>
+                        <span className="javaD">v</span>
+                        <span className="javaD">e</span>
+                        <span className="javaD">l</span>
+                        <span className="javaD">o</span>
+                        <span className="javaD">p</span>
+                        <span className="javaD">e</span>
+                        <span className="javaD">r</span>
+
+                        
+                    </h2>
                 </motion.h2>
 
                 <motion.p
-                    className='text-lg text-indigo-200 mb-6 max-w-3xl mx-auto'
+                    className='text-lg text-gray-400 mb-6 max-w-3xl mx-auto'
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.8 }}
                 >
-                    As a fresh graduate, I’m eager to leverage my skills in React, Java, Python, and Spring Boot to build efficient applications. I’m passionate about writing clean code, solving problems, and continuously learning in a collaborative environment.
+                    I'm currently pursuing a BE in Information Technology with skills in React, Java, Python, and Spring Boot. I focus on writing clean, scalable code and enjoy solving complex problems. Driven by continuous learning, I thrive in collaborative environments.
                 </motion.p>
 
                 <motion.p
-                    className='text-lg text-gray-400 build'
+                    className='text-lg text-purple-200 build'
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1.0 }}
                 >
-                    Let’s build something amazing together!
+                    <span id="element"></span>
                 </motion.p>
             </div>
 
