@@ -11,14 +11,12 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
-  /* Prevents scrollbars from appearing on the viewport */
+  overflow-x: hidden;
 }
 
 
 body::-webkit-scrollbar {
   display: none;
-  /* For Chrome, Safari, and Edge */
 }
 
 h2 {
@@ -33,7 +31,7 @@ h2 {
 
 
 .navBg {
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -187,17 +185,86 @@ h2 {
 
 .hero-btn {
   position: relative;
-  width: max-content;
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 600;
+  background: linear-gradient(to right, #d861de93 , #2657eb8f ); /* Initial gradient */
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden; /* Ensures the pseudo-element doesn't overflow the button */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+.hero-btn span {
+  position: relative;
+  z-index: 2; /* Ensure the text stays above the pseudo-element */
+}
+
+.hero-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #2657eb8f , #d861de93);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1; 
+  border-radius: inherit; 
+}
+
+.hero-btn:hover::before {
+  opacity: 1; 
+}
+
+.hero-btn:hover {
+  color: white; 
+}
+
+
+
 
 .btn-rev {
   position: relative;
-  width: max-content;
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 600;
+  background: linear-gradient(to right, #2657eb8f, #d861de93);
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+.btn-rev span {
+  position: relative;
+  z-index: 2; 
+}
+
+.btn-rev::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #d861de93, #2657eb8f); /* Hover gradient */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1; 
+  border-radius: inherit; 
+}
+
+.btn-rev:hover::before {
+  opacity: 1; 
+}
+
+.btn-rev:hover {
+  color: white; 
+}
+
+
 
 /* 
 .hero-btn::after{

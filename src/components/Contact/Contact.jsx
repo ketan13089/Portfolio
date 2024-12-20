@@ -1,6 +1,11 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
+import {
+    Github,
+    Linkedin,
+    Twitter,
+} from 'lucide-react';
 
 export default function Contact() {
     const form = useRef();
@@ -94,11 +99,11 @@ export default function Contact() {
                     <div>
                         <motion.button
                             type="submit"
-                            className="sendButton py-3 px-6 bg-gradient-to-r from-purple-300 to-indigo-500 text-white font-semibold rounded-lg transform transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-600 hover:text-gray-600"
+                            className="hero-btn py-3 px-6 bg-gradient-to-r from-purple-300 to-indigo-500 text-white font-semibold rounded-lg transform transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-600 hover:text-white-600"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Send
+                           <span>Send</span>
                         </motion.button>
                     </div>
                 </motion.form>
@@ -106,15 +111,23 @@ export default function Contact() {
 
             {/* Social Media Links */}
             <div className='absolute bottom-10 left-4 flex items-center space-x-4 text-2xl'>
-                <a href="https://www.linkedin.com/in/ketan-ghumare/" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-linkedin-in text-gray-400 hover:text-indigo-500 transition-colors duration-300"></i>
-                </a>
-                <a href="https://github.com/ketan13089" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-github text-gray-400 hover:text-indigo-500 transition-colors duration-300"></i>
-                </a>
-                <a href="https://x.com/ketan_ghumare" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-x-twitter text-gray-400 hover:text-indigo-500 transition-colors duration-300"></i>
-                </a>
+            <div className="flex space-x-6 mt-8">
+                    {[
+                        { Icon: Github, href: 'https://github.com/ketan13089', label: 'GitHub' },
+                        { Icon: Linkedin, href: 'https://www.linkedin.com/in/ketan-ghumare/', label: 'LinkedIn' },
+                        { Icon: Twitter, href: 'https://x.com/ketan_ghumare', label: 'Twitter' }
+                    ].map(({ Icon, href, label }) => (
+                        <a
+                            key={label}
+                            href={href}
+                            className="transform hover:scale-105 text-indigo-300 hover:text-indigo-100 transition-all duration-300"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon size={24} />
+                        </a>
+                    ))}
+                </div>
             </div>
         </section>
     );

@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Typed from 'typed.js'; 
+import Typed from 'typed.js';
+
+import {
+    Github,
+    Linkedin,
+    Twitter,
+} from 'lucide-react';
 
 export default function Hero() {
     useEffect(() => {
@@ -67,11 +73,14 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <Link to="/contact" className="hero-btn bg-gradient-to-r from-purple-300 to-indigo-500 text-white font-semibold py-3 px-6 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-indigo-100 hover:text-white">
-                        Contact
+                    <Link to="/contact" className="hero-btn text-white font-semibold py-3 px-6 transform transition-all duration-500 ease-in-out 
+                    hover:scale-105 
+                    hover:shadow-lg 
+                    ">
+                        <span>Contact</span>
                     </Link>
-                    <Link to="/projects" className="btn-rev bg-gradient-to-r from-purple-300 to-indigo-500 text-white font-semibold py-3 px-6 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-indigo-100 hover:text-white">
-                        Projects
+                    <Link to="/projects" className="btn-rev text-white font-semibold py-3 px-6 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-indigo-100 hover:text-white">
+                        <span>Projects</span>
                     </Link>
                 </motion.div>
             </div>
@@ -85,7 +94,7 @@ export default function Hero() {
                     transition={{ duration: 0.4, delay: 0.6 }}
                 >
                     <h2 className='javaText text-4xl font-bold text-white my-5'>
-                        
+
 
                         <span className="javaD">J</span>
                         <span className="javaD">a</span>
@@ -102,7 +111,7 @@ export default function Hero() {
                         <span className="javaD">e</span>
                         <span className="javaD">r</span>
 
-                        
+
                     </h2>
                 </motion.h2>
 
@@ -127,16 +136,26 @@ export default function Hero() {
 
             {/* Social Media Links */}
             <div className='absolute bottom-10 left-4 flex items-center space-x-4 text-2xl'>
-                <a href="https://www.linkedin.com/in/ketan-ghumare/" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-linkedin-in text-gray-400 hover:text-indigo-500 transition-colors duration-300"></i>
-                </a>
-                <a href="https://github.com/ketan13089" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-github text-gray-400 hover:text-indigo-500 transition-colors duration-300"></i>
-                </a>
-                <a href="https://x.com/ketan_ghumare" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-x-twitter text-gray-400 hover:text-indigo-500 transition-colors duration-300"></i>
-                </a>
+                <div className="flex space-x-6 mt-8">
+                    {[
+                        { Icon: Github, href: 'https://github.com/ketan13089', label: 'GitHub' },
+                        { Icon: Linkedin, href: 'https://www.linkedin.com/in/ketan-ghumare/', label: 'LinkedIn' },
+                        { Icon: Twitter, href: 'https://x.com/ketan_ghumare', label: 'Twitter' }
+                    ].map(({ Icon, href, label }) => (
+                        <a
+                            key={label}
+                            href={href}
+                            className="transform hover:scale-105 text-indigo-300 hover:text-indigo-100 transition-all duration-300"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon size={24} />
+                        </a>
+                    ))}
+                </div>
             </div>
         </section>
     );
 }
+
+

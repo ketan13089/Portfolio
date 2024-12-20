@@ -7,21 +7,22 @@ import {
     PerspectiveCamera,
     Environment,
     SpotLight,
-    Float
+    Stars,
 } from '@react-three/drei';
 import * as THREE from 'three';
+
+import { 
+    Github, 
+    Linkedin, 
+    Twitter, 
+  } from 'lucide-react';
 
 const Model = ({ mouse }) => {
     const modelRef = useRef();
     const gltf = useLoader(GLTFLoader, '/drone.glb');
 
-    // Smooth model movement
     useFrame((state, delta) => {
         if (modelRef.current) {
-            // Smooth rotation based on mouse position
-            //modelRef.current.rotation.y += delta * 0.5;
-
-            // Smooth position lerping
             modelRef.current.position.x = THREE.MathUtils.lerp(
                 modelRef.current.position.x,
                 mouse.x * 5,
@@ -38,19 +39,6 @@ const Model = ({ mouse }) => {
     });
 
     return (
-        // <Float
-        //     speed={1.5}
-        //     rotationIntensity={0.5}
-        //     floatIntensity={1.5}
-        // >
-        //     <primitive
-        //         ref={modelRef}
-        //         object={gltf.scene}
-        //         scale={0.5}
-        //         castShadow
-        //         receiveShadow
-        //     />
-        // </Float>
         <primitive
             ref={modelRef}
             object={gltf.scene}
@@ -77,7 +65,7 @@ const Scene = ({ mouse }) => {
                 autoRotateSpeed={0.5}
             />
 
-           
+            {/* Lights */}
             <ambientLight intensity={0.3} />
             <SpotLight
                 position={[10, 10, 10]}
@@ -94,10 +82,21 @@ const Scene = ({ mouse }) => {
                 castShadow
             />
 
-           
+
             <Environment preset="city" />
 
-            
+            {/* Stars background */}
+            <Stars
+                radius={70}
+                depth={30}
+                count={10000}
+                factor={4}
+                saturation={0}
+                fade
+                speed={2}
+            />
+
+            {/* Model */}
             <Model mouse={mouse} />
         </>
     );
@@ -120,22 +119,40 @@ export default function KG() {
 
     return (
         <section className="relative h-screen bg-gradient-to-br from-[#24243e] via-[#302b63] to-[#0f0c29]">
-            
+
             <div className="absolute inset-0">
                 <Canvas shadows>
                     <Scene mouse={mouse} />
                 </Canvas>
             </div>
 
-        
             <div className="relative z-10 flex items-center justify-center h-full">
                 <div className="text-center">
-                    <h1 className="text-6xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-indigo-500">
-                        Hey
+                    <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 to-indigo-500">
+                        <span>Hola</span>
                     </h1>
-                    <p className="text-indigo-200 text-xl max-w-md mx-auto">
-                        I'm Ketan...
+                    <p className="text-indigo-200 text-xl max-w-3xl mx-auto">
+                        Soy Ketan... <br />
+                        Me apasiona aprender cosas nuevas y disfrutar de la vida. Me gusta viajar, conocer nuevas culturas y pasar tiempo con amigos y familia. Siempre estoy buscando maneras de crecer como persona y disfrutar de cada momento.
                     </p>
+
+                    <div className="flex justify-center space-x-6 mt-10">
+                        {[
+                            { Icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
+                            { Icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
+                            { Icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' }
+                        ].map(({ Icon, href, label }) => (
+                            <a
+                                key={label}
+                                href={href}
+                                className="transform hover:scale-105 text-indigo-300 hover:text-indigo-100 transition-all duration-300"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Icon size={24} />
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

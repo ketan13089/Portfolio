@@ -85,7 +85,7 @@ export default function Navbar() {
                 <AnimatePresence>
                     {isMenuOpen && (
                         <motion.div
-                            className="md:hidden bg-white shadow-lg"
+                            className="md:hidden bg-gradient-to-r from-purple-900 to-indigo-900 shadow-lg"
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
