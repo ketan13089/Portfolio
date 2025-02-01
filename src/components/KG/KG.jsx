@@ -132,8 +132,8 @@ export default function KG() {
                         <span>Hola</span>
                     </h1>
                     <p className="text-indigo-200 text-xl max-w-3xl mx-auto">
-                        Soy Ketan... <br />
-                        Me apasiona aprender cosas nuevas y disfrutar de la vida. Me gusta viajar, conocer nuevas culturas y pasar tiempo con amigos y familia. Siempre estoy buscando maneras de crecer como persona y disfrutar de cada momento.
+                        I'm Ketan... <br />
+Passionate software developer skilled in React, Java, Python, and Spring Boot. I love solving problems and building efficient, scalable applications. Let’s connect!.
                     </p>
 
                     <div className="flex justify-center space-x-6 mt-10">

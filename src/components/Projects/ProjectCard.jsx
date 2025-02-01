@@ -76,12 +76,12 @@ const Projects = () => {
       github: "https://github.com/ketan13089/VoxFox"
     },
     {
-      title: "CriCatalyst",
-      description: "Cricket analysis python app",
-      technologies: ["Python", "Tkinter"],
-      image: "Cricatalyst.png",
-      link: "#",
-      github: "https://github.com/ketan13089/CricCatalyst"
+      title: "Cluster",
+      description: "Real-time chat application",
+      technologies: ["ReactJS", "Firebase"],
+      image: "cluster.png",
+      link: "https://clusterr.netlify.app/",
+      github: "https://github.com/ketan13089/Cluster"
     },
     {
       title: "PeerStation",
